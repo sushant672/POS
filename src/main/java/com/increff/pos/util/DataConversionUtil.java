@@ -3,8 +3,8 @@ package com.increff.pos.util;
 import com.increff.pos.model.BrandData;
 import com.increff.pos.model.BrandForm;
 import com.increff.pos.pojo.BrandPojo;
-import pos.model.*;
-import pos.pojo.*;
+import com.increff.pos.model.*;
+import com.increff.pos.pojo.*;
 
 
 import java.util.ArrayList;
