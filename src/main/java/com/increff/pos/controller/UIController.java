@@ -8,14 +8,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-public class UiController {
+public class UIController {
 
     @Value("${app.baseUrl}")
     private String baseUrl;
 
     @RequestMapping(value = "")
-    public String index() {
-        return "index.html";
+    public ModelAndView index() {
+        return mav("index.html");
     }
 
     @RequestMapping(value = "/ui/home")
@@ -23,15 +23,18 @@ public class UiController {
         return mav("home.html");
     }
 
-    @RequestMapping(value = "/ui/features")
-    public ModelAndView features() {
-        return mav("features.html");
+    @RequestMapping(value = "/ui/brand")
+    public ModelAndView brands() {
+        return mav("brand.html");
     }
 
-    @RequestMapping(value = "/ui/pricing")
-    public ModelAndView pricing() {
-        return mav("pricing.html");
+    @RequestMapping(value = "/ui/learn")
+    public ModelAndView learn() {
+        return mav("learn.html");
     }
+
+
+
 
     private ModelAndView mav(String page) {
         ModelAndView mav = new ModelAndView(page);

@@ -5,6 +5,7 @@ import com.increff.pos.model.BrandForm;
 import com.increff.pos.pojo.BrandPojo;
 import com.increff.pos.model.*;
 import com.increff.pos.pojo.*;
+import com.increff.pos.service.ApiException;
 
 
 import java.util.ArrayList;
@@ -36,6 +37,29 @@ public class DataConversionUtil {
         }
         return brandDataList;
     }
+
+    public static ProductPojo convert(ProductForm productForm, BrandPojo brandPojo) throws ApiException {
+        ProductPojo productPojo = new ProductPojo();
+        productPojo.setBarcode(productForm.getBarcode());
+        productPojo.setName(productForm.getName());
+        productPojo.setMrp(productForm.getMrp());
+        productPojo.setBrandCategory(brandPojo.getId());
+        return productPojo;
+    }
+
+    public static ProductData convert(ProductPojo productPojo, BrandPojo brandPojo) throws ApiException {
+        ProductData productData = new ProductData();
+        productData.setBarcode(productPojo.getBarcode());
+        productData.setName(productPojo.getName());
+        productData.setMrp(productPojo.getMrp());
+        productData.setId(productPojo.getId());
+        productData.setBrand(brandPojo.getBrand());
+        productData.setCategory(brandPojo.getCategory());
+        return productData;
+    }
+
+
+
 
 
 
