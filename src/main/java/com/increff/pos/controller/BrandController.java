@@ -23,14 +23,14 @@ public class BrandController{
     private BrandService brandService;
 
     //Add a brand
-    @ApiOperation(value = "Adds a brand")
+    @ApiOperation(value = "Add a brand")
     @RequestMapping(path = "/api/brand", method = RequestMethod.POST)
     public void add(@RequestBody BrandForm brandForm) throws ApiException {
-        BrandPojo brandPojo= DataConversionUtil.convert(brandForm);
+        BrandPojo brandPojo = DataConversionUtil.convert(brandForm);
         brandService.add(brandPojo);
     }
 
-    @ApiOperation(value = "Adds a brand")
+    @ApiOperation(value = "Add brand list")
     @RequestMapping(path = "/api/brand/list", method = RequestMethod.POST)
     public void add(@RequestBody List<BrandForm> brandForm) throws ApiException {
         List<BrandPojo> brandPojoList=new ArrayList<>();
@@ -58,7 +58,7 @@ public class BrandController{
     }
 
     //Updates a brand
-    @ApiOperation(value = "Updates a brand")
+    @ApiOperation(value = "Update a brand")
     @RequestMapping(path = "/api/brand/{id}", method = RequestMethod.PUT)
     public void update(@PathVariable int id, @RequestBody BrandForm brandForm) throws ApiException {
         BrandPojo brandPojo = DataConversionUtil.convert(brandForm);

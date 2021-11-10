@@ -15,7 +15,7 @@
             <div class="row">
                 <button type="button" class = "btn btn-primary" name="button" data-toggle="modal" data-target="#add-brand-modal">Add</button> &nbsp;
                 <button type="button" class = "btn btn-primary" name="button" id = "refresh-data">Refresh</button> &nbsp;
-                <button type="button" class = "btn btn-primary" name="button" id = "upload-data">Upload</button> &nbsp;
+                <button type="button" class = "btn btn-primary" name="button" data-toggle="modal" data-target="#add-brand-list-modal">Upload</button> &nbsp;
                 <button type="button" class = "btn btn-primary" name="button">Brand Report</button>
             </div>
 
@@ -71,7 +71,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="button" class="btn btn-primary" onclick="addBrand()">Upload</button>
-                                                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,13 +101,10 @@
     		                    Processed: <span id="processCount">0</span>,
     		                    Errors: <span id="errorCount">0</span>
                             </div>
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary" id="addBrandList">Upload</button>
-                            <button type="button" class="btn btn-warning" id="download-errors">Download Errors</button>
-
+                            <button type="button" class="btn btn-primary" onclick="addBrandList()">Upload</button>
                         </div>
                     </div>
                 </div>
@@ -123,6 +120,6 @@
                 <div th:replace = "snippets.html :: name_footer"></div>
             </div>
         </div>
-        <script th:src="@{/static/brand.js?3}"></script>
+        <script th:src="@{/static/brand.js?2}"></script>
     </body>
 </html>
